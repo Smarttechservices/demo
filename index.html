@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ग्रामपंचायत रामपूर</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Icons (FontAwesome or similar) -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            padding: 30px;
+        }
+
+        .population-card {
+            width: 400px;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+            .population-card h2 {
+                font-size: 18px;
+                color: #003366;
+                margin-bottom: 10px;
+                position: relative;
+                display: inline-block;
+                border-bottom: 3px solid orange;
+            }
+
+        .population-table {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .pop-col {
+            flex: 1;
+        }
+
+            .pop-col:not(:last-child) {
+                border-right: 1px solid #ddd;
+            }
+
+            .pop-col img {
+                width: 36px;
+                height: 36px;
+                margin-bottom: 6px;
+            }
+
+        .pop-label {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #222;
+        }
+
+        .pop-value {
+            font-size: 20px; /* Increase size */
+            font-weight: bold; /* Make bold */
+            color: #000; /* Darker color for better contrast (optional) */
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>ग्रामपंचायत गुजरखेडे</h1>
+        <p>तालुक- येवला,  जिल्हा - नाशिक </p>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li class="active"><a href="#">🏠 मुख्यपृष्ठ</a></li>
+            <li><a href="#">ℹ️ आमच्याबद्दल</a></li>
+            <li><a href="#">👥 संघटना</a></li>
+            <li><a href="#">🤝 सेवा</a></li>
+            <li><a href="#">📍 योजना</a></li>
+            <li><a href="#">🖼️ गॅलरी</a></li>
+            <li><a href="#">📞 संपर्क</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome-section">
+        <div class="left-box">
+            <h2>ग्रामपंचायत रामपूर मध्ये आपले स्वागत आहे</h2>
+            <p>
+                ग्रामपंचायत कार्यालय रामपूर मध्ये आपले मनःपूर्वक स्वागत. या पोर्टल वर ग्रामपंचायतीतील नागरिकांना सर्व सुविधा उपलब्ध होतील.
+                सूचनांमध्ये व गावातील कार्यक्रम बदलाची माहिती मिळेल.
+            </p>
+
+            <h3 class="section-title">लोकसंख्या</h3>
+            <div class="card">
+
+                <div class="population-card">
+                   
+                    <div class="population-table">
+                        <div class="pop-col">
+                            <img src="https://cdn-icons-png.flaticon.com/128/1077/1077012.png" alt="Total">
+                            <div class="pop-label">एकूण लोकसंख्या</div>
+                            <div class="pop-value">5000</div>
+                        </div>
+                        <div class="pop-col">
+                            <img src="https://cdn-icons-png.flaticon.com/128/236/236831.png" alt="Male">
+                            <div class="pop-label">पुरुष</div>
+                            <div class="pop-value">3000</div>
+                        </div>
+                        <div class="pop-col">
+                            <img src="https://cdn-icons-png.flaticon.com/128/236/236832.png" alt="Female">
+                            <div class="pop-label">महिला</div>
+                            <div class="pop-value">2000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-box">
+            <div class="slider">
+                <div class="slides">
+                    <img src="images/sabha1.jpeg" alt="Gram Panchayat 1">
+                    <img src="images/sabha2.jpeg" alt="Gram Panchayat 2">
+                    <img src="images/sabha3.jpeg" alt="Gram Panchayat 3">
+                </div>
+                <button class="prev" onclick="moveSlide(-1)">❮</button>
+                <button class="next" onclick="moveSlide(1)">❯</button>
+            </div>
+           
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Village Profile | Designed by SmartTech Services</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

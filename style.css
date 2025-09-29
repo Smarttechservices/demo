@@ -1,0 +1,325 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(90deg, #0f9d58, #34a853);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background: #222;
+    padding: 10px;
+    text-align: center;
+}
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+    }
+
+        nav a:hover {
+            color: #34a853;
+        }
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+.site-header {
+    background: linear-gradient(to right, #6cbef0, #3d566e);
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+    .site-header h1 {
+        font-size: 2rem;
+        margin-bottom: 5px;
+    }
+
+    .site-header p {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+/* Navbar */
+.navbar {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+    .navbar ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+        .navbar ul li {
+            margin: 8px;
+        }
+
+            .navbar ul li a {
+                text-decoration: none;
+                color: #1e3d59;
+                font-size: 1rem;
+                font-weight: bold;
+                padding: 8px 14px;
+                border-radius: 25px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                /* Animation setup */
+                transition: all 0.3s ease;
+            }
+
+                /* Hover Effect */
+                .navbar ul li a:hover {
+                    background: #f0f0f0;
+                    color: #0b6e4f;
+                    transform: scale(1.1); /* makes it pop out */
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* adds floating effect */
+                }
+
+            /* Active Menu */
+            .navbar ul li.active a {
+                background: #28a745;
+                color: white;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            }
+/* Main welcome section layout */
+.welcome-section {
+    display: flex;
+    gap: 30px; /* You can adjust the space as needed */
+    padding: 20px;
+    align-items: flex-start; /* Optional: aligns top of both boxes */
+}
+
+.left-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 1000px;
+}
+
+    .left-box h2 {
+        color: #2a4d69;
+        margin-bottom: 10px;
+    }
+
+    .left-box p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+/* Section title underline */
+.section-title {
+    color: #0044cc;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+    .section-title::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: orange;
+        margin-top: 5px;
+        border-radius: 2px;
+    }
+
+/* लोकसंख्या टेबल कार्ड */
+.population-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+    .population-card table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    .population-card th {
+        background: #f8f9fa;
+        padding: 15px;
+        font-size: 14px;
+        color: #333;
+    }
+
+        .population-card th img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+
+    .population-card td {
+        padding: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #2a4d69;
+    }
+
+
+/* Right side slider */
+.right-box {
+    flex: 1;
+    position: relative;
+}
+
+.slider {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Navigation buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+/* ---------- Slider layout ---------- */
+.right-box {
+    flex: 1;
+    min-width: 300px;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 340px; /* adjust height as needed */
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* slides container: horizontal flexbox */
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease; /* smooth animation */
+}
+
+    /* each image occupies full slider width */
+    .slides img {
+        width: 100%;
+        flex: 0 0 100%;
+        height: 100%;
+        object-fit: cover; /* crop/cover nicely */
+        display: block;
+    }
+
+/* Prev / Next buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    border: none;
+    padding: 10px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    font-size: 18px;
+    line-height: 1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.prev {
+    left: 12px;
+}
+
+.next {
+    right: 12px;
+}
+
+    /* Make buttons slightly larger on hover */
+    .prev:hover, .next:hover {
+        transform: translateY(-50%) scale(1.06);
+    }
+
+/* Responsive: stack columns on small screens */
+@media (max-width: 820px) {
+    .welcome-section {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .slider {
+        height: 240px;
+    }
+}
