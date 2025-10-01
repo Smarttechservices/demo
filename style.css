@@ -5,6 +5,43 @@ body {
     color: #333;
 }
 
+.top-bar-first {
+  display: flex;
+  justify-content: space-between;
+  min-height: 50px;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 8px 20px;
+  font-size: 18px;
+  border-bottom: 1px solid #ddd;
+}
+
+.contact-info-one span {
+  margin-right: 20px;
+  padding-left: 400px;
+  
+}
+
+.right-links-first {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+.right-links-first a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.logo-bar {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: white;
+}
+
 header {
     background: linear-gradient(90deg, #0f9d58, #34a853);
     color: white;
@@ -42,12 +79,92 @@ nav {
 }
 
 footer {
-    background: #222;
+    background: linear-gradient(to right, #6cbef0, #3d566e);
     color: white;
     text-align: center;
     padding: 15px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
+
+.footer-info {
+    background-color: #222;  /* black background */
+    color: #fff;
+    padding: 50px 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+}
+
+.footer-col p {
+    font-size: 14px;
+    color: #bbb;
+    margin: 8px 0;
+}
+
+.footer-col p strong {
+    color: #fff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons a {
+    color: #bbb;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 .gallery img {
     width: 100%;
@@ -59,6 +176,7 @@ footer {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 /* Header */
@@ -67,11 +185,13 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 10px;
+    min-height: 150px;
 }
 
     .site-header h1 {
         font-size: 2rem;
         margin-bottom: 5px;
+        margin-top: 25px;
     }
 
     .site-header p {
@@ -81,8 +201,13 @@ footer {
 
 /* Navbar */
 .navbar {
-    background: white;
+    background: rgb(241, 240, 240);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-height: 75px;
+    position: sticky;   /* Makes it stick */
+    top: 0;             /* Stick to the top */
+    width: 100%;        /* Full width */
+    z-index: 1000; 
 }
 
     .navbar ul {
@@ -93,7 +218,7 @@ footer {
     }
 
         .navbar ul li {
-            margin: 8px;
+            margin: 5px;
         }
 
             .navbar ul li a {
@@ -132,6 +257,140 @@ footer {
     align-items: flex-start; /* Optional: aligns top of both boxes */
 }
 
+.welcome-section-about {
+    background-color: white;
+      padding: 80px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Center Card */
+    .info-card {
+      background-color: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px 40px;
+      border-radius: 12px;
+      max-width: 1200px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .info-card h2 {
+      font-size: 22px;
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+    .info-card p {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+.left-box-about {
+    max-width: 600px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.section-title-about {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.section-header-organisation {
+  background-color: #e66400; /* Orange */
+  padding: 15px 0;
+  text-align: center;
+}
+
+.section-header-organisation h2 {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Mukta', sans-serif; /* Optional: use same font as rest of site */
+}
+
+/* organisation-photo-design */
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the grid */
+  padding: 40px 20px;
+}
+
+.member-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.member-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 12px;
+}
+
+.overlay h3 {
+  font-size: 16px;
+  margin: 0 0 5px;
+  font-family: 'Mukta', sans-serif;
+}
+
+.badge {
+  background-color: #f28c00;
+  color: white;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.filter-menu {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  margin: 0 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #333;
+  border-bottom: 2px solid transparent;
+  font-weight: 600;
+  font-family: 'Mukta', sans-serif;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  color: #e66400;
+  border-color: #e66400;
+}
+
 .left-box {
     background: #fff;
     padding: 20px;
@@ -141,7 +400,7 @@ footer {
 }
 
     .left-box h2 {
-        color: #2a4d69;
+        color: #0044cc;
         margin-bottom: 10px;
     }
 
@@ -169,6 +428,69 @@ footer {
         margin-top: 5px;
         border-radius: 2px;
     }
+
+.officials-section {
+  text-align: center;
+  padding: 50px 20px 30px;
+  background-color: #fff;
+}
+
+.section-title-photo {
+  font-size: 36px;
+  font-weight: bold;
+  color: #1d1d1f;
+  margin-bottom: 10px;
+  font-family: 'Mukta', sans-serif;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title-photo::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #f28c00; /* Orange underline */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.officials-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 200px;
+  margin-top: 40px;
+}
+
+.official-card {
+  width: 220px;
+  text-align: center;
+}
+
+.official-card img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #eee;
+}
+
+.official-card h3 {
+  font-size: 18px;
+  color: #3b240b;
+  font-weight: 600;
+  margin: 5px 0;
+  font-family: 'Mukta', sans-serif;
+}
+
+.official-card p {
+  font-size: 14px;
+  color: #666;
+  font-family: 'Mukta', sans-serif;
+}
+
 
 /* लोकसंख्या टेबल कार्ड */
 .population-card {
@@ -228,6 +550,43 @@ footer {
     border-radius: 10px;
 }
 
+/* Dots style */
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.dot.active {
+  background-color: #2196F3; /* blue active dot */
+}
+
+/* Title style */
+.slider-title {
+  margin-top: 8px;
+  text-align: center;
+  background: #ffeb3b;   /* yellow background */
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+  display: block;        /* full width so it can center */
+  width: fit-content; 
+  margin-left: auto;     /* center horizontally */
+  margin-right: auto;
+}
+
+
 /* Navigation buttons */
 .prev, .next {
     position: absolute;
@@ -254,6 +613,11 @@ footer {
 .right-box {
     flex: 1;
     min-width: 300px;
+}
+.team-grid {
+    display: flex;
+    justify-content: center;  /* items center मध्ये येतील */
+    gap: 20px;                /* div मधे अंतर ठेवण्यासाठी */
 }
 
 .slider {
@@ -312,6 +676,56 @@ footer {
         transform: translateY(-50%) scale(1.06);
     }
 
+.logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+}
+
+/* Page container for all govt logos */
+#logos {
+    display: flex;
+    justify-content: center;   /* horizontal center */
+    align-items: center;       /* vertical center */
+    height: 20vh;             /* take full viewport height */
+    width: 100%;
+}
+
+.govlogo {
+    height: 100px;   /* 👈 change this value to make logos smaller or bigger */
+    width: auto;
+    transition: transform 0.2s ease-in;
+}
+
+.govlogo:hover {
+    cursor: pointer;
+    transform: scale(1.3) translateY(-5px);
+    border-radius: 40px;
+}
+
+/* Govt logos row */
+.govtlogos {
+    display: flex;
+    flex-wrap: wrap;           /* wrap on smaller screens */
+    justify-content: center;   /* keep them centered */
+    gap: 20px;                 /* spacing between logos */
+}
+
+/* Hover effect */
+.govtlogos img:hover {
+    cursor: pointer;
+    transform: scale(1.3) translateY(-5px);
+    border-radius: 40px;
+    transition: 0.1s ease-in;
+}
+    
+
 /* Responsive: stack columns on small screens */
 @media (max-width: 820px) {
     .welcome-section {
@@ -322,4 +736,132 @@ footer {
     .slider {
         height: 240px;
     }
+}
+.person{background:white;padding:12px;border-radius:12px;text-align:center;flex: 1}
+.f-wrap{display:flex;flex-direction:column;gap:12px;align-items:center}
+ .wrap{max-width:var(--max-width);margin:0 auto;padding:0 18px}
+
+   @media (max-width: 880px) {
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+    nav ul {
+        display: none;
+    }
+    .mobile-nav {
+        display: flex;
+        gap: 8px;
+    }
+
+    /* Responsive logos */
+    .govlogo {
+        height: 40px;
+        max-width: 80px;
+    }
+
+    #logos {
+        display: flex;
+        justify-content: center;   /* horizontal center */
+        align-items: center;       /* vertical center */
+        height: 100vh;             /* full viewport height */
+        width: 100%;
+    }
+
+    /* Logos container */
+    .govtlogos {
+        display: flex;
+        flex-wrap: wrap;           /* wrap on smaller screens */
+        justify-content: center;   /* center each row */
+        gap: 20px;                 /* space between logos */
+    }
+
+    /* Logo hover effect */
+    .govtlogos img:hover {
+        cursor: pointer;
+        transform: scale(1.3) translateY(-5px);
+        border-radius: 40px;
+        transition: 0.1s ease-in;
+    }
+}
+ 
+/* services form design */
+
+.service-section-services {
+  background-color: #f6f8fb;
+  padding: 40px 20px;
+}
+
+.service-container-services {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.service-container-services h2 {
+  color: #003366;
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.service-container-services p {
+  color: #333;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.download-link {
+  color: #0155d0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.download-link:hover {
+  text-decoration: underline;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.service-table-services {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Mukta', sans-serif;
+}
+
+.service-table-services thead {
+  background-color: #e6f0ff;
+  font-weight: bold;
+}
+
+.service-table-services th,
+.service-table-services td {
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.service-table-services tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.pdf-link {
+  color: #0155d0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.pdf-link:hover {
+  text-decoration: underline;
+}
+
+.mb-20-services {
+  margin-bottom: 20px;
 }

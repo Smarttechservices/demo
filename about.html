@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ग्रामपंचायत गुजरखेडे</title>
+   
+  <!--Bootstrap -->
+   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    
+    <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Icons (FontAwesome or similar) -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lightbox.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            /* padding: 30px; */
+        }
+
+        .population-card {
+            width: 400px;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+            .population-card h2 {
+                font-size: 18px;
+                color: #003366;
+                margin-bottom: 10px;
+                position: relative;
+                display: inline-block;
+                border-bottom: 3px solid orange;
+            }
+
+        .population-table {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 150px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;  /* hover केल्यावर pointer दिसेल */
+        }
+
+        /* hover झाल्यावर bubble effect */
+        .population-table:hover {
+            transform: scale(1.1);  /* थोडा मोठा होईल */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* shadow वाढेल */
+        }
+
+        .pop-col {
+            flex: 1;
+        }
+
+            .pop-col:not(:last-child) {
+                border-right: 1px solid #ddd;
+            }
+
+            .pop-col img {
+                width: 36px;
+                height: 36px;
+                margin-bottom: 6px;
+            }
+
+        .pop-label {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #222;
+        }
+
+        .pop-value {
+            font-size: 20px; /* Increase size */
+            font-weight: bold; /* Make bold */
+            color: #000; /* Darker color for better contrast (optional) */
+            margin-top: 5px;
+        }
+        .goog-te-combo {
+      font-size: 16px !important;
+      font-weight: bold !important;
+      padding: 6px;
+    }
+
+    
+    </style>
+
+    <meta name="google" content="notranslate">
+    <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'mr', // or 'mr' if your original site is in Marathi
+      includedLanguages: 'en,hi,mr', // ✅ Add 'mr' for Marathi
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+   
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>ग्रामपंचायत गुजरखेडे (धनकवाडी )</h1>
+        <p>तालुक- येवला,  जिल्हा - नाशिक </p>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">🏠 मुख्यपृष्ठ</a></li>
+            <li class="active"><a href="#">ℹ️ आमच्याबद्दल</a></li>
+            <li><a href="organisation.html">👥 संघटना</a></li>
+            <li><a href="services.html">🤝 सेवा</a></li>
+            <li><a href="#">📍 योजना</a></li>
+            <li><a href="#">🖼️ गॅलरी</a></li>
+            <li><a href="#">📞 संपर्क</a></li>
+             <div id="google_translate_element" style="float: right; margin: 20px;"></div>
+        </ul>
+
+       
+    </nav>
+
+    <section class="welcome-section-about">
+        <div class="info-card">
+            <h2 class="section-title-about">ग्रामपंचायत खैरगव्हाण बद्दल माहिती</h2>
+            <p>
+                खैरगव्हाण हि जिल्हा नाशिक पासून ७९.९ किमी अतरावर आहे ग्रामपंचायत खैरगव्हाण ची स्थापना 
+                १८/१२/१९९६ साली झाली. ग्रामपंचायत खैरगव्हाण सर्व सुविधांनी परिपूर्ण असे अद्यावत ग्रामपंचायत कार्यालय 
+                कार्यान्वित असून संपूर्ण कामकाज संगणकीय पद्धतीचे आहे.
+            </p>
+
+            
+                
+           
+        </div>
+
+        
+    </section>
+
+
+         <div id="logos"> 
+        <div class="govtlogos">
+          <img class="govlogo" src="Images/apleSarkar.png" alt="Aple Sarkar">        
+          <img class="govlogo" src="images/atalBujal.png" alt="Atal Bhujal">
+          <img class="govlogo" src="Images/digitalIndia.png" alt="Digital India">
+          <img class="govlogo" src="Images/g20.png" alt="G 20">
+          <img class="govlogo" src="Images/gramVikas.png" alt="Gram Vikas">
+          <img class="govlogo" src="Images/mahaShasan.png" alt="Maha shasan">
+          <img class="govlogo" src="Images/panchayat.png" alt="Panchayat Raj">
+          <img class="govlogo" src="Images/vasundhara.png" alt="Vasundhara">        
+          <img class="govlogo" src="Images/panchayat.png" alt="Panchayat">
+          <img class="govlogo" src="Images/satyamevaJayate.png" alt="Satyameva Jayate">
+          <img class="govlogo" src="Images/jalayuktaShivar.png" alt="Jalyukta Shivar">
+        </div>
+      </div>
+      <!-- </section> -->
+
+    <section class="footer-info">
+  <div class="footer-container">
+
+    <!-- Column 1 -->
+    <div class="footer-col">
+      <h3>महत्वाच्या लिंक</h3>
+      <ul>
+        <li> <a href="https://gr.maharashtra.gov.in/1145/Government-Resolutions" target="_blank" rel="noopener noreferrer">थाशन निर्णय</a></li>
+        <li><a href="https://zpnashik.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">नाशिक जिल्हा परिषद</a></li>
+        <li><a href="https://maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">महाराष्ट्र शासन</a></li>
+        <li><a href="https://www.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer">महा ऑनलाइन</a></li>
+        <li><a href="https://nashik.gov.in/en/services/rti/" target="_blank" rel="noopener noreferrer">माहिती अधिकार</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-col">
+      <h3>महत्वाच्या लिंक</h3>
+      <ul>
+        <li><a href="https://ceoelection.maharashtra.gov.in/ceo/" target="_blank" rel="noopener noreferrer">मतदार यादीत नाव शोधण्यासाठी</a></li>
+        <li><a href="https://mahadbtmahait.gov.in/Farmer/AgriLogin/AgriLogin" target="_blank" rel="noopener noreferrer">कृषी विभाग महाडीबीटी</a></li>
+        <li><a href="https://bhulekh.mahabhumi.gov.in/" target="_blank" rel="noopener noreferrer">7/12 उतारा</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-col">
+      <h3>सोशल मीडिया</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="footer-col">
+      <h3>पत्ता</h3>
+      <p>मु. पो. गुजरखेडे (धनकवाडी ) तालुक: येवला, जिल्हा: नाशिक <br>पिन : 422003</p>
+      <p><strong>GET DIRECTIONS</strong></p>
+      <p>मोबाईल : +91 7972263732</p>
+      <p><strong>029383</strong></p>
+    </div>
+
+  </div>
+</section>
+
+
+
+     <footer>
+    <div class="wrap f-wrap">
+      <div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap">
+        <div style="font-weight:700">© <span id="year"></span> Gram Panchayat</div>
+        <div class="light">All rights reserved</div>
+      </div>
+      <small class="light"> Developed By SmartTech Services | +91 8484836988  - Designed with care • Responsive • Bilingual</small>
+    </div>
+  </footer>
+    <script src="script.js"></script>
+</body>
+</html>

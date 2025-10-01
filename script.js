@@ -1,65 +1,75 @@
-// script.js
+function createSlider(sliderSelector, intervalTime = 3000) {
+    let index = 0;
+    let interval;
 
-let index = 0; // current slide
-let interval;  // interval reference
-const intervalTime = 3000; // 3 seconds
+    const slider = document.querySelector(sliderSelector);
+    if (!slider) return;
 
-function updateSlide() {
-    const slides = document.querySelector(".slides");
-    if (!slides) return;
-    slides.style.transform = `translateX(-${index * 100}%)`;
-}
-
-// Move slides manually (called by buttons)
-function moveSlide(step) {
-    const slides = document.querySelector(".slides");
+    const slides = slider.querySelector(".slides");
     if (!slides) return;
 
-    const total = slides.children.length;
-    index = (index + step + total) % total;
-    updateSlide();
-    resetAutoSlide(); // restart auto-scroll after manual navigation
-}
+    const dots = slider.parentElement.querySelectorAll(".dots .dot");
 
-// Start automatic sliding
-function startAutoSlide() {
-    stopAutoSlide(); // clear any existing interval
-    interval = setInterval(() => {
-        const slides = document.querySelector(".slides");
-        if (!slides) return;
+    function updateSlide() {
+        slides.style.transform = `translateX(-${index * 100}%)`;
 
-        const total = slides.children.length;
-        index = (index + 1) % total;
-        updateSlide();
-    }, intervalTime);
-}
+        if (dots.length > 0) {
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+        }
 
-// Stop automatic sliding
-function stopAutoSlide() {
-    if (interval) {
-        clearInterval(interval);
-        interval = null;
     }
-}
 
-// Reset (useful when clicking buttons)
-function resetAutoSlide() {
-    stopAutoSlide();
-    startAutoSlide();
-}
+    function moveSlide(step) {
+        const total = slides.children.length;
+        index = (index + step + total) % total;
+        updateSlide();
+        resetAutoSlide();
+    }
 
-// Initialize slider after page loads
-document.addEventListener("DOMContentLoaded", () => {
-    updateSlide();
-    startAutoSlide();
+    function startAutoSlide() {
+        stopAutoSlide();
+        interval = setInterval(() => {
+            const total = slides.children.length;
+            index = (index + 1) % total;
+            updateSlide();
+        }, intervalTime);
+    }
+
+    function stopAutoSlide() {
+        if (interval) {
+            clearInterval(interval);
+            interval = null;
+        }
+    }
+
+    function resetAutoSlide() {
+        stopAutoSlide();
+        startAutoSlide();
+    }
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => goToSlide(i));
+    });
 
     // Pause on hover
-    const slider = document.querySelector(".slider");
-    if (slider) {
-        slider.addEventListener("mouseenter", stopAutoSlide);
-        slider.addEventListener("mouseleave", startAutoSlide);
-    }
+    slider.addEventListener("mouseenter", stopAutoSlide);
+    slider.addEventListener("mouseleave", startAutoSlide);
 
-    // Expose function globally (so inline onclick works)
-    window.moveSlide = moveSlide;
+    // init
+    updateSlide();
+    startAutoSlide();
+
+    return { moveSlide, startAutoSlide, stopAutoSlide };
+}
+window.addEventListener('DOMContentLoaded', () => {
+        const yearElement = document.getElementById('year');
+        if(yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+    });
+// Init multiple sliders
+document.addEventListener("DOMContentLoaded", () => {
+    window.slider1 = createSlider("#slider1", 3000); // पहिला slider (3 सेकंद)
+    window.slider2 = createSlider("#slider2", 4000); // दुसरा slider (4 सेकंद)
 });
