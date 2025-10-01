@@ -29,6 +29,37 @@ body {
   
 }
 
+.login-translate {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding-right: 300px;
+  }
+
+  .gp-login {
+    text-decoration: none;
+    color: #222;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+
+  .gp-login:hover {
+    background: #f1f1f1;
+  }
+
+  .separator {
+    color: #999;
+    font-weight: normal;
+  }
+
+  #google_translate_element {
+    display: inline-block;
+  }
+
 .right-links-first a {
   text-decoration: none;
   color: #333;
