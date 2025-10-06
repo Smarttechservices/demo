@@ -23,6 +23,8 @@ body.lb-disable-scrolling {
   outline: none;
 }
 
+
+
 .lightbox .lb-image {
   display: block;
   height: auto;
@@ -45,10 +47,18 @@ body.lb-disable-scrolling {
   margin: 0 auto;
   border-radius: 4px;
 
-  /* Background color behind image.
-     This is visible during transitions. */
+
   background-color: white;
 }
+
+
+
+.lb-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .lb-outerContainer:after {
   content: "";

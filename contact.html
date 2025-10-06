@@ -132,16 +132,16 @@
     </header>
 
     <nav class="navbar">
-         <div class="mobile-nav-toggle" aria-expanded="false">☰</div>
+        <div class="mobile-nav-toggle" aria-expanded="false">☰</div>
 
         <ul id="main-nav">
             <li><a href="index.html">🏠 मुख्यपृष्ठ</a></li>
-            <li class="active"><a href="#">ℹ️ आमच्याबद्दल</a></li>
+            <li><a href="about.html">ℹ️ आमच्याबद्दल</a></li>
             <li><a href="organisation.html">👥 संघटना</a></li>
             <li><a href="services.html">🤝 सेवा</a></li>
             <li><a href="schemes.html">📍 योजना</a></li>
             <li><a href="gallery.html">🖼️ गॅलरी</a></li>
-            <li><a href="contact.html">📞 संपर्क</a></li>
+            <li class="active"><a href="#">📞 संपर्क</a></li>
              <li><a href="#complaint" data-bs-toggle="modal" data-bs-target="#complaintModal">📢 तक्रार</a></li>  
             
         </ul>
@@ -151,12 +151,17 @@
 
     <section class="welcome-section-about">
         <div data-aos="fade-right" class="info-card">
-            <h2 class="section-title-about">ग्रामपंचायत खैरगव्हाण बद्दल माहिती</h2>
-            <p>
-                खैरगव्हाण हि जिल्हा नाशिक पासून ७९.९ किमी अतरावर आहे ग्रामपंचायत खैरगव्हाण ची स्थापना 
-                १८/१२/१९९६ साली झाली. ग्रामपंचायत खैरगव्हाण सर्व सुविधांनी परिपूर्ण असे अद्यावत ग्रामपंचायत कार्यालय 
-                कार्यान्वित असून संपूर्ण कामकाज संगणकीय पद्धतीचे आहे.
-            </p>
+            <h2 class="section-title-about">आमच्याशी संपर्क करा</h2>
+                    <div class="contact-info-contact">
+                    <p><strong>पत्ता :</strong>  गुजरखेडे पोस्ट, विखरणी, ता. येवला (नाशिक) . </p>
+                    <p><strong>फोन :</strong> +91-8999279805</p>
+                    <!-- <p><strong>फॅक्स :</strong> +91-020-87654321</p> -->
+                    <p><strong>ईमेल :</strong>  hemantgunjal560@gmail.com</p> 
+                    <!-- <p><strong>मार्गदर्शन मिळवा :</strong> Open in Google Maps</p> -->
+                    <p><strong>कार्यालय वेळ :</strong> सकाळी १०:३० ते सायंकाळी ५:३० वाजे पर्यंत.</p>
+                    </div>
+
+           
 
             
                 
@@ -187,8 +192,8 @@
               <label class="form-label required">मोबाईल नंबर :</label>
               <input type="number" class="form-control" id="complainterNumber" placeholder="आपला मोबाईल नंबर भरा">
             </div>
-
-            <!-- <div class="mb-3">
+<!-- 
+            <div class="mb-3">
               <label class="form-label required">तक्रार / सूचना प्रकार :</label>
               <select class="form-control" id="reasonDropdown">
                 <option value="">-- निवडा --</option>
@@ -228,7 +233,6 @@
       </div>
     </div>
   </div>
-
         <div id="logos"> 
         <div data-aos="fade-up" class="govtlogos">
           <img class="govlogo" src="images/apleSarkar.png" alt="Aple Sarkar">        
@@ -358,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-   
+    <script src="script.js"></script>
      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
     AOS.init({
@@ -367,6 +371,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     </script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="script.js"></script>
 </body>
 </html>

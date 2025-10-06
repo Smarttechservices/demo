@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ॲडमिन लॉगिन</title>
+   
+  <!--Bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Font -->
+     <meta name="google" content="notranslate">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Icons (FontAwesome or similar) -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lightbox.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            justify-content: center;
+            /* padding: 30px; */            
+  /* overflow: hidden;   prevent scroll inside */
+        }
+
+  
+
+     /* SECTIONS */
+    section{padding:42px 0; min-height: 70vh; margin-bottom: 25px;}
+    .section-title{display:flex; justify-content: center; align-items:center;gap:12px;margin-bottom:18px}
+    .section-title h2{margin-bottom:15px;}
+    /* .muted{color:var(--muted);font-size:14px}
+    .light{color:var(--light);font-size:14px} */
+
+    .btn.btn-primary{
+            margin: 25px;
+    }
+
+    
+    .table.table-striped{
+            margin: 25px;
+    
+    }
+
+    #adminDasboard {
+    position: fixed;
+    top: 30px;
+    bottom: 30px;
+    width: calc(100% - 60px); /* 30px margin left + 30px margin right */
+    left: 30px;
+    box-sizing: border-box;  /* includes padding/border inside width */
+    overflow: auto;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    }
+
+
+    .modal-header {
+  position: relative;
+}
+.modal-header .btn-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+    </style>
+
+    <meta name="google" content="notranslate">
+   
+</head>
+
+<body>
+
+   
+
+    <header class="site-header">
+        <h1 data-aos="fade-down"><strong>ग्रामपंचायत गुजरखेडे (धनकवाडी )</strong></h1>
+        <p data-aos="fade-up"><strong>तालुक- येवला,  जिल्हा - नाशिक</strong> </p>
+    </header>
+
+   
+
+    <div id="adminDashboard">
+        <section>
+            <h2 class="section-title">Admin Dashboard</h2>
+
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadModal" id="btnUpload">Upload Gallery Image</button>
+
+            <div id="complaintTableSection">
+                <h3 class="text-center" style="margin-top: 30px;">Submitted Complaints</h3>
+                <table class="table table-striped" style="margin-right:260px;" border="2" id="complaintsTable">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Number</th>
+                            <th>Reason</th>
+                            <th>Description</th>
+                            <th>Created Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Complaints will be populated here -->
+                        </tbody>
+                    </table>   
+             </div>    
+
+        </section>
+    </div>
+
+    
+      <div class="modal" id="uploadModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 data-i18n="imgLabel" class="modal-title">Image Upload</h5>
+              <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <form id="uploadForm">
+                <div class="mb-3">
+                  <lable data-i18n="imgTitleLabel" class="form-label required" >Title :</lable>
+                  <input type="text" data-i18n="nametextLabel" id="imageTitle" class="form-control" placeholder="Enter Title of the Image">
+                </div>
+                <div class="mb-3">
+                  <lable data-i18n="imgCaptionLabel" class="form-label required" >Caption :</lable>
+                  <input type="text" data-i18n="nametextLabel" id="imageCaption" class="form-control" placeholder="Enter Caption of the Image">
+                </div>
+                <div class="mb-3">
+                  <lable  class="form-label required" for="uploadImage" data-i18n="imgUploadLabel">Upload Image :</lable>
+                  <div class="custom-file">
+                    <!-- <input class="custom-file-input" id="imageFile"  type="file" /> -->
+                    <input class="form-control form-control-sm" id="imageFile" type="file" />                    
+                  </div>
+                </div>
+             
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-i18n="submitLabel" type="submit" >Submit</button>
+                <button class="btn btn-danger" data-bs-dismiss="modal" type="submit">Close</button>
+            </div>
+             </form>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+     
+
+
+
+
+     <footer>
+    <div class="wrap f-wrap">
+      <div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap">
+        <div style="font-weight:700">© <span id="year"></span> Gram Panchayat</div>
+        <div class="light">All rights reserved</div>
+      </div>
+      <small class="light"> Developed By SmartTech Services | +91 8484836988  - Designed with care • Responsive • Bilingual</small>
+    </div>
+  </footer>
+    <!-- <script src="script.js"></script> -->
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 1000,   // Animation duration (ms)
+        once: true        // Run animation only once
+    });
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+            pageLanguage: 'mr', // or 'mr' if your original site is in Marathi
+            includedLanguages: 'en,hi,mr', // ✅ Add 'mr' for Marathi
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+     </script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+   
+    <script>          
+            
+    // Fetch protected admin data
+    fetch("https://localhost:7235/api/Admin/dashboard", {
+    headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}`
+    }
+    })
+    .then(res => {
+    if (res.status === 401) {
+        // window.location.href = "AdminDashboard.html";
+        localStorage.removeItem("token"); // clear bad token
+        window.location.href = "admin-login.html"; // redirect to login page
+        return;
+    }
+    return res.json();
+    })
+    .then(data => {
+    console.log("Secure data:", data);
+    });
+
+
+
+    function showAdminDashboard() {
+        document.getElementById("adminDashboard").style.display = "block";
+        loadComplaints();
+    }
+
+        
+    //Image Upload Form 
+    document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const title = document.getElementById('imageTitle').value;
+    const caption = document.getElementById('imageCaption').value;
+    const fileInput = document.getElementById('imageFile');
+    if (fileInput.files.length === 0) {
+        alert('Select a file');
+        return;
+    }
+    const formData = new FormData();
+    formData.append('File', fileInput.files[0]);
+    formData.append('title', title);
+    formData.append('caption', caption);
+
+    const token = localStorage.getItem('token');
+    const resp = await fetch('https://localhost:7235/api/galleryImage/Upload', {
+        method: 'POST',
+        headers: {
+        'Authorization': 'Bearer ' + token
+        // note: do not set Content-Type, browser auto sets multipart boundary
+        },
+        body: formData
+    });
+    if (!resp.ok) {
+        alert('Upload failed!');
+        return;
+    }
+    const res = await resp.json();
+    alert('Image Uploaded Successfully!');    
+    document.getElementById('uploadForm').reset();
+    // Optionally, refresh gallery view or redirect
+    loadGallery();
+    });
+
+    
+
+
+    // Load Uploaded Images to the Gallery Section
+
+
+    async function loadGallery() {
+    try {
+        // Replace with your correct API URL
+        const resp = await fetch('https://localhost:7235/api/galleryImage');
+        if (!resp.ok) {
+        console.error('Gallery fetch failed', resp.status, await resp.text());
+        return;
+        }
+        const images = await resp.json();
+        renderGallery(images);
+    } catch (err) {
+        console.error('Error fetching gallery', err);
+    }
+    }
+
+
+
+    // function renderGallery(images) {
+    // const galleryGrid = document.getElementById('photo-grid');
+    // if (!galleryGrid) {
+    //     console.error('No #galleryGrid element found');
+    //     return;
+    // }
+
+    // // Clear existing content
+    // galleryGrid.innerHTML = '';
+
+    // images.forEach(img => {
+    //     // img.filepath is something like "/gallery/unique-filename.jpg"
+    //     // Compose full URL if needed (for example, if your API is on another domain)
+    //     const src = img.filepath;  
+    //     const caption = img.caption || '';
+    //     const title = img.title || '';
+
+    //     // Create anchor element for lightbox
+    //     const a = document.createElement('a');
+    //     a.href = src;
+    //     a.setAttribute('data-lightbox', 'models');
+    //     a.setAttribute('data-title', caption);
+
+    //     // Create image element
+    //     const imageEl = document.createElement('img');
+    //     imageEl.classList.add('gimg');
+    //     imageEl.src = src;
+    //     imageEl.alt = title;
+
+    //     // Append
+    //     a.appendChild(imageEl);
+    //     galleryGrid.appendChild(a);
+    // });
+    // }
+
+
+/* ----------rendering gallery images with backend--------------- */
+    function renderGallery(images) {
+    const galleryGrid = document.getElementById('galleryGrid');
+    if (!galleryGrid) {
+        console.error('No #galleryGrid element found');
+        return;
+    }
+
+    // Clear existing content
+    galleryGrid.innerHTML = '';
+
+    images.forEach(img => {
+        // img.filepath is something like "/gallery/unique-filename.jpg"
+        // Compose full URL if needed (for example, if your API is on another domain)
+        const src = img.filepath;  
+        const caption = img.caption || '';
+        const title = img.title || '';
+
+        // Create anchor element for lightbox
+        const anchor = document.createElement('a');
+        anchor.href = src;
+        anchor.setAttribute('data-lightbox', 'models');
+        anchor.setAttribute('data-title', caption);
+
+        // Create image element
+        const imageEl = document.createElement('img');
+        imageEl.classList.add('gimg');
+        imageEl.src = src;
+        imageEl.alt = title;
+
+        // Append
+        anchor.appendChild(imageEl);
+        galleryGrid.appendChild(anchor);
+    });
+    }
+
+// function renderGallery(images) {
+//     const galleryGrid = document.querySelector('.photo-grid'); // FIX 1
+//     if (!galleryGrid) {
+//         console.error('No .photo-grid element found');
+//         return;
+//     }
+
+//     // Clear existing content
+//     galleryGrid.innerHTML = '';
+
+//     images.forEach((img, index) => {
+//         const src = img.filepath;  
+//         const caption = img.caption || '';
+//         const title = img.title || '';
+
+//         // Anchor tag
+//         const anchor = document.createElement('a');
+//         anchor.href = src;
+//         anchor.setAttribute('data-lightbox', 'gallery'); // FIX 2
+//         anchor.setAttribute('data-title', caption);
+//         anchor.setAttribute('data-aos', index % 2 === 0 ? 'fade-left' : 'fade-right'); // FIX 3
+
+//         // Overlay container
+//         const overlayDiv = document.createElement('div');
+//         overlayDiv.classList.add('img-overlay'); // FIX 4
+
+//         // Image element
+//         const imageEl = document.createElement('img');
+//         imageEl.src = src;
+//         imageEl.alt = title;
+
+//         // Overlay icon
+//         const overlayIcon = document.createElement('div');
+//         overlayIcon.classList.add('overlay-icon'); // FIX 5
+//         overlayIcon.textContent = '+';
+
+//         // Build structure
+//         overlayDiv.appendChild(imageEl);
+//         overlayDiv.appendChild(overlayIcon);
+//         anchor.appendChild(overlayDiv);  // FIX 6
+//         galleryGrid.appendChild(anchor);
+//     });
+// }
+
+
+    
+
+    //Load Complaints Table
+
+    async function loadComplaints() {
+    
+    try{
+        const token = localStorage.getItem('adminToken');
+        const resp = await fetch('https://localhost:7235/api/Complaint', {
+            headers: {
+            'Authorization': 'Bearer ' + token
+            }
+        });
+        const arr = await resp.json();
+        const tbody = document.querySelector('#complaintsTable tbody');
+        tbody.innerHTML = '';
+        arr.forEach(c => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td>${c.id}</td>
+                            <td>${c.name}</td>
+                            <td>${c.number}</td>
+                            <td>${c.reason}</td>
+                            <td>${c.description}</td>
+                            <td>${(new Date(c.createdDate)).toLocaleString()}</td>`;
+            tbody.appendChild(tr);
+        });
+        } 
+    catch (err) {
+        tbody.innerHTML = `<tr><td colspan="4">Failed to load complaints.</td></tr>`;
+        }  
+    
+    }
+    window.onload = function() {
+    loadComplaints();
+    };
+
+
+  </script>
+</body>
+</html>

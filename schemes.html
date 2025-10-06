@@ -133,13 +133,12 @@
 
     <nav class="navbar">
          <div class="mobile-nav-toggle" aria-expanded="false">☰</div>
-
         <ul id="main-nav">
             <li><a href="index.html">🏠 मुख्यपृष्ठ</a></li>
-            <li class="active"><a href="#">ℹ️ आमच्याबद्दल</a></li>
+            <li ><a href="about.html">ℹ️ आमच्याबद्दल</a></li>
             <li><a href="organisation.html">👥 संघटना</a></li>
             <li><a href="services.html">🤝 सेवा</a></li>
-            <li><a href="schemes.html">📍 योजना</a></li>
+            <li class="active"><a href="#">📍 योजना</a></li>
             <li><a href="gallery.html">🖼️ गॅलरी</a></li>
             <li><a href="contact.html">📞 संपर्क</a></li>
              <li><a href="#complaint" data-bs-toggle="modal" data-bs-target="#complaintModal">📢 तक्रार</a></li>  
@@ -149,24 +148,67 @@
        
     </nav>
 
-    <section class="welcome-section-about">
-        <div data-aos="fade-right" class="info-card">
-            <h2 class="section-title-about">ग्रामपंचायत खैरगव्हाण बद्दल माहिती</h2>
-            <p>
-                खैरगव्हाण हि जिल्हा नाशिक पासून ७९.९ किमी अतरावर आहे ग्रामपंचायत खैरगव्हाण ची स्थापना 
-                १८/१२/१९९६ साली झाली. ग्रामपंचायत खैरगव्हाण सर्व सुविधांनी परिपूर्ण असे अद्यावत ग्रामपंचायत कार्यालय 
-                कार्यान्वित असून संपूर्ण कामकाज संगणकीय पद्धतीचे आहे.
-            </p>
+    <!-- <section class="welcome-section-schemes"> -->
+            <section id="schemes">
+      <div class="section-title-schemes"><h2 data-i18n="schemesTitle">ग्रामपंचायत योजना</h2></div>
 
-            
-                
-           
+      <div id="schemes-completed">
+        <!-- <h3 data-i18n="schemesCompleted">Completed Schemes</h3> -->
+        <div class="cards" id="completedCards">
+          <!-- Sample cards - replace images/text as needed -->
+          <article data-aos="fade-right" class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="images/jal-jivan_mission" alt="Scheme image">
+            <h3 data-i18n="sc1title">जल जीवन मिशन</h3>
+            <p data-i18n="sc1desc">सर्व घरांना सुरक्षित पिण्याचे पाणी पुरवणारा पूर्ण झालेला प्रकल्प.</p>
+          </article>
+          <article data-aos="fade-left" class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/pmgsy-e89d506d.jpg" alt="Scheme image">
+            <h3 data-i18n="sc2title">प्रधानमंत्री ग्राम सडक योजना</h3>
+            <p data-i18n="sc2desc">स्थायी पाथवे आणि ड्रेनेजसह सुधारलेली कनेक्टिव्हिटी.</p>
+          </article>
         </div>
+      </div>
 
-        
+      <div id="schemes-ongoing" style="margin-top:22px">
+        <!-- <h3 data-i18n="schemesOngoing">Ongoing Schemes</h3> -->
+        <div class="cards" id="ongoingCards">
+          <article data-aos="fade-right" class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1542223616-8c1f6b7b3b4b?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/sanitationDrive" alt="Scheme image">
+            <h3 data-i18n="sc3title">Sanitation Drive</h3>
+            <p data-i18n="sc3desc">स्वच्छता प्रोत्साहन आणि घरगुती शौचालयांच्या बांधकामाला प्रोत्साहन.</p>
+          </article>
+          <article data-aos="fade-left" class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1542293787938-c9e299b88095?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/CropYojana.png" alt="Scheme image">
+            <h3 data-i18n="sc4title">पिक समर्थन कार्यक्रम</h3>
+            <p data-i18n="sc4desc">शेतकऱ्यांना इनपुट्स व प्रशिक्षणासह समर्थन.</p>
+          </article>
+        </div>
+      </div>
+
+      <div id="schemes-future" style="margin-top:22px">
+        <!-- <h3 data-i18n="schemesFuture">Future Schemes</h3> -->
+        <div class="cards" id="futureCards">
+          <article data-aos="fade-right" class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/jal-jivan_mission" alt="Scheme image">
+            <h3 data-i18n="sc5title">जल-जीवन मिशन हर घर जल</h3>
+            <p data-i18n="sc5desc">कार्यक्रम आणि प्रशिक्षणासाठी बहुउद्देशीय हॉलचा आराखडा.</p>
+          </article>
+          <article data-aos="fade-left" class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/solarstreet.jpg" alt="Scheme image">
+            <h3 data-i18n="sc6title">सोलर स्ट्रीट लाईटिंग</h3>
+            <p data-i18n="sc6desc">ऊर्जा-कार्यक्षम सौर दिवे बसवण्याची प्रस्तावना.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <div class="modal fade" id="complaintModal" tabindex="-1">
+        <div class="modal fade" id="complaintModal" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
 
@@ -228,6 +270,8 @@
       </div>
     </div>
   </div>
+    <!-- </section> -->
+
 
         <div id="logos"> 
         <div data-aos="fade-up" class="govtlogos">
@@ -358,7 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-   
+    <script src="script.js"></script>
      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
     AOS.init({
@@ -367,6 +411,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     </script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="script.js"></script>
 </body>
 </html>

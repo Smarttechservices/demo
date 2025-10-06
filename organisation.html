@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ग्रामपंचायत गुजरखेडे</title>
    
   <!--Bootstrap -->
-   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Google Font -->
+     <meta name="google" content="notranslate">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- Icons (FontAwesome or similar) -->
@@ -125,19 +127,21 @@
   </div>
 
     <header class="site-header">
-        <h1>ग्रामपंचायत गुजरखेडे (धनकवाडी )</h1>
-        <p>तालुक- येवला,  जिल्हा - नाशिक </p>
+        <h1 data-aos="fade-down"><strong>ग्रामपंचायत गुजरखेडे (धनकवाडी )</strong></h1>
+        <p data-aos="fade-up"><strong>तालुक- येवला,  जिल्हा - नाशिक</strong> </p>
     </header>
 
     <nav class="navbar">
-        <ul>
+        <div class="mobile-nav-toggle" aria-expanded="false">☰</div>
+        <ul id="main-nav">
             <li><a href="index.html">🏠 मुख्यपृष्ठ</a></li>
             <li ><a href="about.html">ℹ️ आमच्याबद्दल</a></li>
             <li class="active"><a href="#">👥 संघटना</a></li>
             <li><a href="services.html">🤝 सेवा</a></li>
-            <li><a href="#">📍 योजना</a></li>
-            <li><a href="#">🖼️ गॅलरी</a></li>
-            <li><a href="#">📞 संपर्क</a></li>
+            <li><a href="schemes.html">📍 योजना</a></li>
+            <li><a href="gallery.html">🖼️ गॅलरी</a></li>
+            <li><a href="contact.html">📞 संपर्क</a></li>
+             <li><a href="#complaint" data-bs-toggle="modal" data-bs-target="#complaintModal">📢 तक्रार</a></li>  
              
         </ul>
 
@@ -148,14 +152,14 @@
     <h2>पदाधिकारी</h2>
     </div>
 
-    <div class="filter-menu">
+    <!-- <div class="filter-menu">
         <button class="filter-btn active" data-filter="all">सर्व</button>
         <button class="filter-btn" data-filter="executive">ग्रा. पं. कार्यकारिणी</button>
         <button class="filter-btn" data-filter="employee">ग्रा. पं. कर्मचारी</button>
-    </div>
+    </div> -->
 
 
-    <section class="members-grid">
+    <section data-aos="fade-up" class="members-grid">
         <div class="member-card">
             <img src="images/gramsevak.png" alt="भाऊसाहेब टिकले">
             <div class="overlay">
@@ -223,6 +227,68 @@
 
     </section>
 
+    <div class="modal fade" id="complaintModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">तक्रार / सूचना</h5>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body">
+          <form id="complaintForm">
+            <div class="mb-3">
+              <label class="form-label required">नाव :</label>
+              <input type="text" class="form-control" id="complainterName" placeholder="आपले पूर्ण नाव भरा">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label required">मोबाईल नंबर :</label>
+              <input type="number" class="form-control" id="complainterNumber" placeholder="आपला मोबाईल नंबर भरा">
+            </div>
+
+            <!-- <div class="mb-3">
+              <label class="form-label required">तक्रार / सूचना प्रकार :</label>
+              <select class="form-control" id="reasonDropdown">
+                <option value="">-- निवडा --</option>
+                <option value="complaint">पाणी प्रश्न</option>
+                <option value="suggestion">स्वच्छता</option>
+                <option value="complaint">गटार चेंबर</option>
+                <option value="suggestion">रस्ते वाहतूक</option>
+                <option value="complaint">पथ दिवे</option>
+                <option value="suggestion">घंटा गाडी</option>
+                <option value="complaint">इतर</option>
+                
+              </select>
+            </div> -->
+
+            <div class="mb-3">
+              <label class="form-label required">तक्रार / सूचना निवडा :</label>
+              <select class="form-control" id="reasonDropdown">
+                <option value="">-- निवडा --</option>
+                <option value="complaint">तक्रार</option>
+                <option value="suggestion">सूचना</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label required">वर्णन :</label>
+              <textarea class="form-control" id="comlaintDesc" rows="3" placeholder="समस्या तपशीलवार लिहा"></textarea>
+            </div>
+          </form>
+        </div>
+
+        <!-- Footer -->
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="submit" form="complaintForm">Send</button>
+          <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
        <div id="logos"> 
         <div data-aos="fade-up" class="govtlogos">
@@ -300,6 +366,67 @@
       <small class="light"> Developed By SmartTech Services | +91 8484836988  - Designed with care • Responsive • Bilingual</small>
     </div>
   </footer>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.mobile-nav-toggle');
+  const menu = document.querySelector('nav ul#main-nav');
+  const menuLinks = document.querySelectorAll('nav ul#main-nav li a');
+
+  // Guard: if elements are missing (e.g. different page), exit gracefully
+  if (!toggle || !menu) return;
+
+  // Toggle menu on hamburger click
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('show');       // add/remove .show
+    toggle.setAttribute('aria-expanded', isOpen);       // accessibility
+    // Optional: change icon from ☰ to ✖
+    toggle.textContent = isOpen ? '✖' : '☰';
+  });
+
+  // Close menu when any link clicked (for SPA behaviour or anchor links)
+  if (menuLinks.length) {
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      });
+    });
+  }
+
+
+
+
+
+  // Optional: close menu if user taps/clicks outside the nav when open
+  document.addEventListener('click', (e) => {
+    if (!menu.classList.contains('show')) return;
+    if (!e.target.closest('nav')) {
+      menu.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }
+  });
+
+  // Optional: allow keyboard toggle via Enter/Space when focused
+  toggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggle.click();
+    }
+  });
+});
+</script>
+
     <script src="script.js"></script>
+         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 1000,   // Animation duration (ms)
+        once: true        // Run animation only once
+    });
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
